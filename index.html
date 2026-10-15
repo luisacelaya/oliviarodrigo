@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olivia Rodrigo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+    font-family: "Just Like Heaven";
+    src: url("DATA/FUENTES/justlikeheaven.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+        background-color: #DDC5EB;
+    }
+        .encabezado {
+            width: 100%;
+            height: 145px;
+            background-color: #884299;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .logo {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+        }
+
+        .titulo {
+            color: white;
+            font-family: 'Just Like Heaven', cursive;
+            font-size: 90px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        a.boton {
+    text-decoration: none;
+}
+    </style>
+</head>
+
+<body>
+<audio autoplay loop hidden>   
+    <source src="DATA/AUDIOS/dropdead.mp3" type="audio/mpeg" />   
+    <source src="DATA/AUDIOS/dropdead.wap" type="audio/wav" />   
+    Tu navegador no es compatible con el Audio HTML5
+</audio>
+    <header class="encabezado">
+<img src="DATA/FOTOS/logos/LOGO.png" alt="Logo" class="logo">
+        <h1 class="titulo">Olivia Rodrigo</h1>
+    </header>
+
+    <div class="carrusel">
+  <div class="carrusel-imagen"></div>
+</div>
+
+<div class="contenedor-principal"> 
+     
+  <!-- BOTONES IZQUIERDOS -->
+<div class="botones">
+
+    <div class="boton" onclick="mostrarInformacion('biografia')">
+        Biografía
+    </div>
+
+    <div class="boton" onclick="mostrarInformacion('inicios')">
+        Inicios
+    </div>
+
+    <div class="boton" onclick="mostrarInformacion('publico')">
+        Relación con<br>su público
+    </div>
+
+    <div class="boton" onclick="mostrarInformacion('exitos')">
+        Éxitos
+    </div>
+
+    <div class="boton" onclick="mostrarInformacion('polemicas')">
+        Polémicas
+    </div>
+
+</div>
+
+
+<!-- CUADRO BLANCO -->
+<div class="cuadro-informacion" id="informacion">
+
+    <p class="mensaje-inicial">
+        Selecciona un tema para conocer más sobre Olivia Rodrigo.
+    </p>
+
+</div>
+ 
+ 
+    <!-- BOTONES DERECHOS -->
+    <div class="botones"> 
+ 
+        <a href="ALBUMES.html" class="boton">
+         Álbumes<br>›
+        </a>
+ 
+        <a href="MERCANCIA.html" class="boton">
+         Mercancía<br>›
+        </a>
+
+       <a href="COLABORACIONES.html" class="boton">
+         Colaboraciones musicales<br>›
+        </a>
+        
+        <a href="PREMIOS.html" class="boton">
+         Premios<br>›
+        </a>
+ 
+        <a href="PRESENTACIONES.html" class="boton">
+         Próximas presentaciones<br>›
+        </a>
+ 
+    </div> 
+ 
+</div>
+
+
+<!-- ÁLBUMES DEBAJO -->
+
+<div class="albumes"> 
+ 
+    <div class="album"> 
+        <img src="DATA/FOTOS/album/sour.jpg" alt="SOUR"> 
+        <p>Sour (2021)</p> 
+    </div> 
+ 
+    <div class="album"> 
+        <img src="DATA/FOTOS/album/guts.jpg" alt="GUTS"> 
+        <p>Guts (2023)</p> 
+    </div> 
+ 
+    <div class="album"> 
+        <img src="DATA/FOTOS/album/sadlove.jpg" alt="you seem pretty sad for a girl so in love"> 
+        <p>You seem pretty sad for<br>a girl so in love (2026)</p> 
+    </div> 
+ 
+</div>
+<div class="visita">
+    También visita:
+    <a href="#">
+        BILLIE EILISH
+    </a>
+    
+</div>
+
+<footer>
+    Hecho por Luisita :D
+</footer>
+
+<style>
+  .carrusel {
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    border-bottom: 2px solid rgb(51, 51, 51);
+  }
+
+  .carrusel-imagen {
+    width: 100%;
+    height: 100%;
+    background-color: #d6cbd8;
+
+    background-image: url("DATA/FOTOS/logos/rota.png");
+    background-repeat: repeat-x;
+    background-size: 70px 50px;
+
+    animation: desplazamiento 2s linear infinite;
+  }
+
+  @keyframes desplazamiento {
+    from {
+      background-position: 0 0;
+    }
+
+    to {
+      background-position: -70px 0;
+    }
+  }
+.contenedor-principal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    padding: 30px 12px;
+}
+
+/* CUADRO DE INFORMACIÓN */
+.cuadro-informacion {
+    width: 520px;
+    max-height: 420px;
+    min-height: 370px;
+    background-color: white;
+    border-radius: 28px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.20);
+
+    padding: 28px 35px;
+
+    overflow-y: auto;
+
+    font-family: 'Questrial', sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+    text-align: justify;
+    color: #222;
+}
+
+/* TÍTULO DE CADA INFORMACIÓN */
+.titulo-informacion {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    color: #884299;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+/* PÁRRAFOS */
+.cuadro-informacion p {
+    margin-bottom: 12px;
+}
+
+/* LISTAS */
+.cuadro-informacion ul {
+    margin-left: 22px;
+    margin-bottom: 12px;
+}
+
+.cuadro-informacion li {
+    margin-bottom: 8px;
+}
+
+/* MENSAJE INICIAL */
+.mensaje-inicial {
+    text-align: center;
+    margin-top: 120px;
+    color: #884299;
+    font-size: 18px;
+}
+
+/* COLUMNAS DE BOTONES */
+.botones {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+/* BOTONES */
+.boton {
+    width: 200px;
+    min-height: 58px;
+    background-color: #A15B9E;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 23px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.albumes {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 20px 20px 40px;
+}
+
+.album {
+    width: 210px;
+    text-align: center;
+}
+
+.album img {
+    width: 190px;
+    height: 180px;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.25);
+}
+
+.album p {
+    margin-top: 8px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1.2;
+}
+  
+.visita {
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+.visita a {
+    color: #884299;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+footer {
+    width: 100%;
+    height: 45px;
+    background-color: #884299;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    cursor: url("DATA/FOTOS/logos/CURSOR.png") 16 16, auto;
+}
+</style>
+<script>
+
+function mostrarInformacion(tema) {
+
+    const informacion = document.getElementById("informacion");
+
+    if (tema === "biografia") {
+
+        informacion.innerHTML = `
+            <h2 class="titulo-informacion">BIOGRAFÍA</h2>
+
+            <p><strong>Nombre completo:</strong> Olivia Isabel Rodrigo</p>
+
+            <p><strong>Fecha de nacimiento:</strong> 20 de febrero de 2003</p>
+
+            <p><strong>Lugar de nacimiento:</strong> Murrieta, California (Rancho Springs Medical Center)</p>
+
+            <p><strong>Lugar de crianza:</strong> Temecula, California</p>
+
+            <p><strong>Nacionalidad:</strong> Estadounidense</p>
+
+            <p><strong>Padres:</strong></p>
+
+            <ul>
+                <li><strong>Chris Rodrigo:</strong> Padre, terapeuta familiar y de ascendencia filipina.</li>
+                <li><strong>Jennifer Rodrigo:</strong> Madre, maestra y de ascendencia alemana e irlandesa.</li>
+            </ul>
+
+            <p><strong>Estructura familiar:</strong> Hija única.</p>
+
+            <p><strong>Condición de salud:</strong> Sordera parcial en el oído izquierdo de nacimiento.</p>
+
+            <p><strong>Influencias tempranas:</strong> Tradiciones filipinas familiares y rock alternativo, género musical preferido de sus padres.</p>
+        `;
+
+    }
+
+
+    else if (tema === "inicios") {
+
+        informacion.innerHTML = `
+            <h2 class="titulo-informacion">INICIOS</h2>
+
+            <p>
+                A los cinco años, <strong>Olivia Rodrigo</strong> comenzó sus clases de canto y actuación, sumando luego piano y guitarra a los doce para escribir sus primeras canciones inspirada por <strong>Taylor Swift</strong>.
+            </p>
+
+            <p>
+                Tras actuar en comerciales y en la película <em>An American Girl: Grace Stirs Up Success</em> (2015), logró el reconocimiento masivo en <strong>Disney Channel</strong> con las series <em>Bizaardvark</em> y <em>High School Musical: The Musical: The Series</em>, donde también empezó a destacar interpretando sus propias composiciones.
+            </p>
+        `;
+
+    }
+
+
+    else if (tema === "publico") {
+
+        informacion.innerHTML = `
+            <h2 class="titulo-informacion">RELACIÓN CON SU PÚBLICO</h2>
+
+            <p>
+                La relación de <strong>Olivia Rodrigo</strong> con sus fans destaca por ser sumamente cercana, auténtica y empática, construida en gran medida sobre la vulnerabilidad de sus canciones.
+            </p>
+
+            <p>
+                Al plasmar en sus letras vivencias reales sobre el <em>desamor, la inseguridad y los retos de crecer</em>, logra que su público no solo escuche su música, sino que se identifique con ella como si fuera un diario personal compartido.
+            </p>
+
+            <p>
+                Esta fuerte conexión emocional se refleja de forma masiva en sus conciertos, donde sus seguidores asisten caracterizados con el estilo visual de sus distintas eras musicales y convierten cada presentación en un espacio colectivo donde cantan a todo pulmón cada una de sus composiciones.
+            </p>
+        `;
+
+    }
+
+
+    else if (tema === "exitos") {
+
+        informacion.innerHTML = `
+            <h2 class="titulo-informacion">ÉXITOS</h2>
+
+            <p><strong>De su álbum <em>Sour</em> (2021)</strong></p>
+
+            <ul>
+                <li><strong>Drivers License:</strong> Su sencillo debut, récord mundial de reproducciones y su primer número 1 en el Billboard Hot 100.</li>
+
+                <li><strong>Good 4 U:</strong> Éxito masivo de pop-punk que también alcanzó el puesto número 1 global.</li>
+
+                <li><strong>Deja Vu:</strong> Sencillo que debutó dentro del Top 10 y alcanzó el Top 3 de las listas internacionales.</li>
+
+                <li><strong>Traitor:</strong> Uno de los temas más reproducidos del álbum, aclamado por la crítica y los fans.</li>
+            </ul>
+
+            <p><strong>De su álbum <em>Guts</em> (2023)</strong></p>
+
+            <ul>
+                <li><strong>Vampire:</strong> Primer adelanto del disco y su tercer sencillo en llegar al número 1 en el Billboard Hot 100.</li>
+
+                <li><strong>Bad Idea Right?:</strong> Tema de rock alternativo que se posicionó en los primeros lugares de las listas de éxitos.</li>
+
+                <li><strong>Get Him Back!:</strong> Sencillo promocional de gran impacto radial y viral.</li>
+            </ul>
+
+            <p><strong>De su álbum <em>You Seem Pretty Sad for a Girl So in Love</em> (2026)</strong></p>
+
+            <ul>
+                <li><strong>Drop Dead:</strong> Sencillo principal presentado con su videoclip grabado en el Palacio de Versalles.</li>
+            </ul>
+        `;
+
+    }
+
+
+    else if (tema === "polemicas") {
+
+        informacion.innerHTML = `
+            <h2 class="titulo-informacion">POLÉMICAS</h2>
+
+            <p>
+                Las polémicas más famosas de <strong>Olivia Rodrigo</strong> incluyen el mediático triángulo amoroso tras el lanzamiento de <em>Drivers License</em> con Joshua Bassett y Sabrina Carpenter.
+            </p>
+
+            <p>
+                También se ha generado controversia en torno a su posterior relación sentimental con el actor <strong>Louis Partridge</strong> y el constante escrutinio mediático sobre sus parejas.
+            </p>
+
+            <p>
+                Asimismo, surgieron acusaciones de plagio relacionadas con su álbum <em>Sour</em>, que llevaron a la incorporación de créditos y regalías retroactivas para <strong>Paramore</strong> y <strong>Taylor Swift</strong> en temas como <em>Good 4 U</em> y <em>Deja Vu</em>.
+            </p>
+
+            <p>
+                También generó un fuerte debate político al distribuir anticonceptivos y píldoras de emergencia durante su <strong>GUTS World Tour</strong> en apoyo a los derechos reproductivos.
+            </p>
+        `;
+
+    }
+
+}
+
+</script>
+</body>
+</html>

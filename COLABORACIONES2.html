@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Colaboraciones musicales - Olivia Rodrigo</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: "Just Like Heaven";
+            src: url("DATA/FUENTES/justlikeheaven.ttf");
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: #DDC5EB;
+            font-family: "Montserrat", sans-serif;
+            cursor: url("DATA/FOTOS/logos/Cursor.png"), auto;
+        }
+
+        /* ENCABEZADO */
+        .encabezado {
+            min-height: 145px;
+            background-color: #884299;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+        }
+
+        .logo {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+        }
+
+        .titulo {
+            color: white;
+            font-family: "Just Like Heaven", cursive;
+            font-size: 65px;
+            text-align: center;
+            margin: 0;
+        }
+
+        /* CARRUSEL DE MARIPOSAS */
+        .carrusel {
+            width: 100%;
+            height: 50px;
+            overflow: hidden;
+            border-bottom: 2px solid rgb(51, 51, 51);
+            background-image: url("DATA/FOTOS/logos/rota.png");
+            background-repeat: repeat-x;
+            background-size: 70px 50px;
+            animation: desplazamiento 2s linear infinite;
+        }
+
+        @keyframes desplazamiento {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: -70px 0;
+            }
+        }
+
+        /* SUBTÍTULO */
+        .subtitulo {
+            text-align: center;
+            font-size: 22px;
+            margin: 35px 15px;
+            color: #333333;
+        }
+
+        /* CONTENEDOR DE VIDEOS */
+        .contenedor-videos {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 25px 35px;
+        }
+
+        .video {
+            text-align: center;
+            min-width: 0;
+        }
+
+        .video iframe {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: 2px solid white;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+        }
+
+        .video h3 {
+            font-size: 17px;
+            margin: 12px 0 6px;
+            color: #333333;
+        }
+
+        .video p {
+            font-size: 14px;
+            margin: 0;
+            color: #333333;
+        }
+
+        /* NÚMEROS DE PÁGINA */
+        .paginacion {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 22px;
+            padding: 0 15px 30px;
+            font-size: 19px;
+        }
+
+        .paginacion a {
+            color: #884299;
+            text-decoration: none;
+        }
+
+        .paginacion a:hover,
+        .paginacion a.actual {
+            text-decoration: underline;
+            font-weight: 800;
+        }
+
+        /* REGRESAR AL MENÚ */
+        .regresar-inicio {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 30px;
+        }
+
+        .regresar-inicio img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            width: 100%;
+            background-color: #884299;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 13px;
+        }
+
+        /* DISEÑO PARA CELULARES */
+        @media (max-width: 800px) {
+            .encabezado {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .titulo {
+                font-size: 48px;
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .contenedor-videos {
+                grid-template-columns: 1fr;
+                max-width: 550px;
+            }
+        }
+
+        @media (min-width: 801px) and (max-width: 1050px) {
+            .contenedor-videos {
+                gap: 15px;
+                padding: 0 15px 30px;
+            }
+
+            .video h3 {
+                font-size: 15px;
+            }
+
+            .video p {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+        <img
+            class="logo"
+            src="DATA/FOTOS/logos/LOGO.png"
+            alt="Logo de Olivia Rodrigo">
+
+        <h1 class="titulo">COLABORACIONES</h1>
+    </header>
+
+    <!-- MARIPOSAS -->
+    <div class="carrusel"></div>
+
+    <h2 class="subtitulo">
+        Colaboraciones musicales y presentaciones en vivo
+    </h2>
+
+    <!-- VIDEOS DE LA PÁGINA 2 -->
+    <main class="contenedor-videos">
+
+        <!-- CANCIÓN 1: COMPLICATED -->
+        <div class="video">
+            <iframe
+                src="https://www.youtube.com/embed/PFSzd2aO-fU"
+                title="Complicated - Olivia Rodrigo y Avril Lavigne"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h3>Complicated</h3>
+            <p>Olivia Rodrigo y Avril Lavigne</p>
+        </div>
+
+        <!-- CANCIÓN 2: WONDERING -->
+        <div class="video">
+            <iframe
+                src="https://www.youtube.com/embed/Wc8008B4ENI"
+                title="Wondering - Olivia Rodrigo y Julia Lester"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h3>Wondering</h3>
+            <p>Olivia Rodrigo y Julia Lester</p>
+        </div>
+
+        <!-- CANCIÓN 3: WHAT I'VE BEEN LOOKING FOR -->
+        <div class="video">
+            <iframe
+                src="https://www.youtube.com/embed/gYH6wpR1_eY"
+                title="What I've Been Looking For - Nini y E.J."
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h3>What I've Been Looking For (Nini &amp; E.J. Version)</h3>
+            <p>Olivia Rodrigo y Matt Cornett</p>
+        </div>
+
+    </main>
+
+    <!-- NAVEGACIÓN ENTRE PÁGINAS -->
+<nav class="paginacion">
+    <a href="COLABORACIONES.html" >1</a>
+    <a href="COLABORACIONES2.html" class="actual">2</a>
+    <a href="COLABORACIONES3.html">3</a>
+</nav>
+
+    <!-- REGRESAR AL MENÚ PRINCIPAL -->
+    <a href="index.html" class="regresar-inicio">
+        <img
+            src="DATA/FOTOS/logos/casa.png"
+            alt="Regresar al menú principal">
+    </a>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        Hecho por Luisita :)
+    </footer>
+
+</body>
+</html>

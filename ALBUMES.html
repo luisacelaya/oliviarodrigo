@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ÁLBUMES</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: "Just Like Heaven";
+            src: url("DATA/FUENTES/justlikeheaven.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #DDC5EB;
+            cursor: url("DATA/FOTOS/logos/Cursor.png") 16 16, auto;
+        }
+
+        .encabezado {
+            width: 100%;
+            min-height: 145px;
+            background-color: #884299;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px;
+        }
+
+        .logo {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+        }
+
+        .titulo {
+            color: white;
+            font-family: "Just Like Heaven", cursive;
+            font-size: 90px;
+            font-weight: normal;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .carrusel {
+            width: 100%;
+            height: 50px;
+            overflow: hidden;
+            border-bottom: 2px solid rgb(51, 51, 51);
+        }
+
+        .carrusel-imagen {
+            width: 100%;
+            height: 100%;
+            background-color: #d6cbd8;
+            background-image: url("DATA/FOTOS/logos/rota.png");
+            background-repeat: repeat-x;
+            background-size: 70px 50px;
+            animation: desplazamiento 2s linear infinite;
+        }
+
+        @keyframes desplazamiento {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: -70px 0;
+            }
+        }
+
+        /* CONTENIDO DE LA PÁGINA */
+        .contenido {
+            width: 100%;
+            min-height: 300px;
+            padding: 35px 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .subtitulo {
+            color: #884299;
+            font-family: "Montserrat", sans-serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .descripcion {
+            color: #333;
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+
+.contenedor-albumes {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 35px 25px;
+}
+
+.album {
+    flex: 1;
+    min-width: 0;
+    max-width: 260px;
+    text-align: center;
+}
+
+
+.album img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    background-color: white;
+
+    /* Marco blanco uniforme */
+    padding: 0;
+    border: 5px solid white;
+    border-radius: 0;
+
+    /* Sombra discreta */
+    box-shadow: 0 4px 10px rgba(80, 40, 90, 0.20);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.album img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 14px rgba(80, 40, 90, 0.28);
+}
+
+
+
+.album p {
+    margin-top: 12px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #884299;
+    line-height: 1.4;
+}
+
+/* Acomodo para celulares */
+@media (max-width: 600px) {
+    .contenedor-albumes {
+        flex-wrap: wrap;
+    }
+
+    .album {
+        flex: 0 0 45%;
+    }
+
+    .album img {
+        height: 160px;
+    }
+}
+
+/* CASITA PARA VOLVER AL MENÚ */
+.regresar-inicio {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 25px;
+}
+
+.regresar-inicio img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.regresar-inicio a:hover img {
+    transform: scale(1.15);
+}
+
+
+
+        /* PIE DE PÁGINA */
+        footer {
+            width: 100%;
+            min-height: 45px;
+            background-color: #884299;
+            color: white;
+            font-family: "Montserrat", sans-serif;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        /* ADAPTACIÓN A PANTALLAS PEQUEÑAS */
+        @media (max-width: 600px) {
+            .encabezado {
+                gap: 12px;
+            }
+
+            .logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            .titulo {
+                font-size: clamp(38px, 9vw, 60px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+
+        <img src="DATA/FOTOS/logos/LOGO.png"
+             alt="Logo de Olivia Rodrigo"
+             class="logo">
+
+        <h1 class="titulo">ÁLBUMES</h1>
+    </header>
+
+    <!-- MARIPOSAS EN MOVIMIENTO -->
+    <div class="carrusel">
+        <div class="carrusel-imagen"></div>
+    </div>
+
+
+<main class="contenedor-albumes"> 
+<div class="album"> 
+     <a href="https://open.spotify.com/album/6s84u2TUpR3wdUv4NgKA2j" target="_blank">
+        <img src="DATA/FOTOS/album/sour.jfif" alt="Portada de Sour"> 
+    </a>
+<p>Sour (2021)</p>
+</div> 
+
+<div class="album"> 
+     <a href="https://open.spotify.com/album/1xJHno7SmdVtZAtXbdbDZp" target="_blank">
+        <img src="DATA/FOTOS/album/guts.jfif" alt="Portada de Guts"> 
+    </a>
+<p>Guts (2023)</p>
+</div> 
+
+<div class="album"> 
+     <a href="https://open.spotify.com/intl-es/album/1D06fz3cuob62ysTS8k6gu" target="_blank">
+        <img src="DATA/FOTOS/album/gutss.jfif" alt="Portada de Gutss"> 
+    </a>
+<p>Guts Spilled (2023)</p>
+</div> 
+
+<div class="album"> 
+     <a href="https://open.spotify.com/intl-es/album/3WZZF72ihlKPZBS4zSsNHl" target="_blank">
+        <img src="DATA/FOTOS/album/sadlove.jfif" alt="Portada de yspsfagsil"> 
+    </a>
+<p>You Seem Pretty Sad For A Girl So In Love (2026)</p>
+</div>  
+    </main>
+
+   
+    <div class="regresar-inicio">
+        <a href="index.html" title="Volver al inicio">
+            <img src="DATA/FOTOS/logos/casa.png" alt="Volver al inicio">
+        </a>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        Hecho por Luisita :)
+    </footer>
+
+
+
+</body>
+</html>

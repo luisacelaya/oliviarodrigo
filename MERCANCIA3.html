@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MERCANCÍA - Página 3</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: "Just Like Heaven";
+            src: url("DATA/FUENTES/justlikeheaven.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #DDC5EB;
+            cursor: url("DATA/FOTOS/logos/Cursor.png") 16 16, auto;
+        }
+
+        /* ENCABEZADO */
+        .encabezado {
+            width: 100%;
+            min-height: 145px;
+            background-color: #884299;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px;
+        }
+
+        .logo {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+        }
+
+        .titulo {
+            color: white;
+            font-family: "Just Like Heaven", cursive;
+            font-size: 90px;
+            font-weight: normal;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        /* MARIPOSAS EN MOVIMIENTO */
+        .carrusel {
+            width: 100%;
+            height: 50px;
+            overflow: hidden;
+            border-bottom: 2px solid rgb(51, 51, 51);
+        }
+
+        .carrusel-imagen {
+            width: 100%;
+            height: 100%;
+            background-color: #d6cbd8;
+            background-image: url("DATA/FOTOS/logos/rota.png");
+            background-repeat: repeat-x;
+            background-size: 70px 50px;
+            animation: desplazamiento 2s linear infinite;
+        }
+
+        @keyframes desplazamiento {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: -70px 0;
+            }
+        }
+
+        /* CUADRÍCULA DE PRODUCTOS */
+        .contenedor-productos {
+            width: 100%;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 30px 25px 20px;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+  .producto {
+            min-width: 0;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid rgba(136, 66, 153, 0.45);
+            background: white;
+            box-shadow: 0 3px 7px rgba(80, 40, 90, 0.12);
+        }
+
+        .producto a {
+            display: block;
+            width: 100%;
+        }
+
+        .producto img {
+            display: block;
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            padding: 4px;
+            border: 1px solid rgba(136, 66, 153, 0.4);
+            background: #DDC5EB;
+            transition: transform 0.25s ease;
+        }
+
+        .producto a:hover img {
+            transform: scale(1.04);
+        }
+
+        .nombre-producto {
+            margin-top: 12px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #884299;
+            line-height: 1.4;
+        }
+
+        .precio-producto {
+            margin-top: 7px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #222;
+        }
+
+        /* NAVEGACIÓN ENTRE PÁGINAS */
+        .paginacion {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 22px;
+            padding: 10px 15px 25px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 19px;
+        }
+
+        .paginacion a {
+            color: #884299;
+            text-decoration: none;
+        }
+
+        .paginacion a:hover,
+        .pagina-actual {
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        /* ENLACE A LA TIENDA OFICIAL */
+        .enlace-tienda {
+            text-align: center;
+            padding: 0 15px 20px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        .enlace-tienda a {
+            color: #884299;
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        /* CASITA PARA VOLVER AL MENÚ */
+        .regresar-inicio {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 0 0 25px;
+        }
+
+        .regresar-inicio img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+            transition: transform 0.2s ease;
+        }
+
+        .regresar-inicio a:hover img {
+            transform: scale(1.15);
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            width: 100%;
+            min-height: 45px;
+            background-color: #884299;
+            color: white;
+            font-family: "Montserrat", sans-serif;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        /* ADAPTACIÓN A TABLETAS */
+        @media (max-width: 900px) {
+            .contenedor-productos {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* ADAPTACIÓN A CELULARES */
+        @media (max-width: 480px) {
+            .encabezado {
+                gap: 12px;
+            }
+
+            .logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            .titulo {
+                font-size: clamp(38px, 9vw, 60px);
+            }
+
+            .contenedor-productos {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .producto img {
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+        <img src="DATA/FOTOS/logos/LOGO.png"
+             alt="Logo de Olivia Rodrigo"
+             class="logo">
+
+        <h1 class="titulo">MERCANCÍA</h1>
+    </header>
+
+    <!-- MARIPOSAS EN MOVIMIENTO -->
+    <div class="carrusel">
+        <div class="carrusel-imagen"></div>
+    </div>
+
+    <!-- PÁGINA 3: PRODUCTOS DEL 9 AL 12 -->
+    <main class="contenedor-productos">
+
+        <div class="producto">
+            <!-- sueter -->
+            <a href="https://store.oliviarodrigo.com/collections/guts/products/guts-longsleeve" target="_blank">
+                <img src="DATA/FOTOS/mercancia/sueter.png"
+                     alt="sueter">
+            </a>
+            <p class="nombre-producto">Suéter Blanco Algodón Guts</p>
+            <p class="precio-producto">$597.18 MXN</p>
+        </div>
+
+        <div class="producto">
+            <!-- collar corazon -->
+            <a href="https://store.oliviarodrigo.com/collections/jewelry/products/i-still-fucking-love-you-locket" target="_blank">
+                <img src="DATA/FOTOS/mercancia/collarcorazon.png"
+                     alt="collarcorazon">
+            </a>
+            <p class="nombre-producto">Relicario Corazón - I Still Fucking Love You</p>
+            <p class="precio-producto">$826.86 MXN</p>
+        </div>
+
+        <div class="producto">
+            <!-- IMAGEN DEL PRODUCTO 11 -->
+            <a href="https://store.oliviarodrigo.com/products/the-unraveled-tour-keychain-bundle" target="_blank">
+                <img src="DATA/FOTOS/mercancia/llaveroslove.png"
+                     alt="llaveroslove">
+            </a>
+            <p class="nombre-producto">Set 3 Llaveros You Seem Pretty Sad For A Girl So In Love</p>
+            <p class="precio-producto">$734.83 MXN</p>
+        </div>
+
+        <div class="producto">
+            <!-- IMAGEN DEL PRODUCTO 12 -->
+            <a href="https://store.oliviarodrigo.com/collections/sour/products/sour-standard-vinyl" target="_blank">
+                <img src="DATA/FOTOS/mercancia/vinilsour.png"
+                     alt="vinilsour">
+            </a>
+            <p class="nombre-producto">Vinil Clásico Sour</p>
+            <p class="precio-producto">$550.94 MXN</p>
+        </div>
+
+    </main>
+
+    <!-- NAVEGACIÓN ENTRE LAS TRES PÁGINAS -->
+    <nav class="paginacion">
+        <a href="MERCANCIA.html">1</a>
+        <a href="MERCANCIA2.html">2</a>
+        <span class="pagina-actual">3</span>
+    </nav>
+
+    <!-- ENLACE A LA TIENDA OFICIAL -->
+    <div class="enlace-tienda">
+        <a href="https://store.oliviarodrigo.com/?srsltid=AU7gw4VlTW48D7eGnfUUEgg3mfojp1Jf-8ahEP8yMX10Zo_D4yGURJVu" target="_blank">
+            Visita la tienda oficial
+        </a>
+    </div>
+
+    <!-- CASITA PARA VOLVER AL MENÚ -->
+    <div class="regresar-inicio">
+        <a href="index.html" title="Volver al inicio">
+            <img src="DATA/FOTOS/logos/casa.png"
+                 alt="Volver al inicio">
+        </a>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        Hecho por Luisita :)
+    </footer>
+
+</body>
+</html>

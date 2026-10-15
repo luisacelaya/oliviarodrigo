@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MERCANCÍA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: "Just Like Heaven";
+            src: url("DATA/FUENTES/justlikeheaven.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #DDC5EB;
+            cursor: url("DATA/FOTOS/logos/Cursor.png") 16 16, auto;
+        }
+
+        .encabezado {
+            width: 100%;
+            min-height: 145px;
+            background-color: #884299;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px;
+        }
+
+        .logo {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+        }
+
+        .titulo {
+            color: white;
+            font-family: "Just Like Heaven", cursive;
+            font-size: 90px;
+            font-weight: normal;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .carrusel {
+            width: 100%;
+            height: 50px;
+            overflow: hidden;
+            border-bottom: 2px solid rgb(51, 51, 51);
+        }
+
+        .carrusel-imagen {
+            width: 100%;
+            height: 100%;
+            background-color: #d6cbd8;
+            background-image: url("DATA/FOTOS/logos/rota.png");
+            background-repeat: repeat-x;
+            background-size: 70px 50px;
+            animation: desplazamiento 2s linear infinite;
+        }
+
+        @keyframes desplazamiento {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: -70px 0;
+            }
+        }
+
+        /* CONTENIDO DE LA PÁGINA */
+        .contenido {
+            width: 100%;
+            min-height: 300px;
+            padding: 35px 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .subtitulo {
+            color: #884299;
+            font-family: "Montserrat", sans-serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .descripcion {
+            color: #333;
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+
+/* CUADRÍCULA DE PRODUCTOS */
+        .contenedor-productos {
+            width: 100%;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 30px 25px 20px;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+ .producto {
+            min-width: 0;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid rgba(136, 66, 153, 0.45);
+            background: white;
+            box-shadow: 0 3px 7px rgba(80, 40, 90, 0.12);
+        }
+
+        .producto a {
+            display: block;
+            width: 100%;
+        }
+
+        .producto img {
+            display: block;
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            padding: 4px;
+            border: 1px solid rgba(136, 66, 153, 0.4);
+            background: #DDC5EB;
+            transition: transform 0.25s ease;
+        }
+
+        .producto a:hover img {
+            transform: scale(1.04);
+        }
+
+        .nombre-producto {
+            margin-top: 12px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #884299;
+            line-height: 1.4;
+        }
+
+        .precio-producto {
+            margin-top: 7px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #222;
+        }
+
+        /* NAVEGACIÓN ENTRE PÁGINAS */
+        .paginacion {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 22px;
+            padding: 10px 15px 25px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 19px;
+        }
+
+        .paginacion a {
+            color: #884299;
+            text-decoration: none;
+        }
+
+        .paginacion a:hover,
+        .pagina-actual {
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        /* ENLACE A LA TIENDA OFICIAL */
+        .enlace-tienda {
+            text-align: center;
+            padding: 0 15px 20px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        .enlace-tienda a {
+            color: #884299;
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        /* CASITA PARA VOLVER AL MENÚ */
+        .regresar-inicio {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 0 0 25px;
+        }
+
+        .regresar-inicio img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+            transition: transform 0.2s ease;
+        }
+
+        .regresar-inicio a:hover img {
+            transform: scale(1.15);
+        }
+
+        /* AJUSTE PARA TABLETAS */
+        @media (max-width: 900px) {
+            .contenedor-productos {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* AJUSTE PARA CELULARES */
+        @media (max-width: 480px) {
+            .contenedor-productos {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .producto img {
+                height: 230px;
+            }
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            width: 100%;
+            min-height: 45px;
+            background-color: #884299;
+            color: white;
+            font-family: "Montserrat", sans-serif;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        /* ADAPTACIÓN A PANTALLAS PEQUEÑAS */
+        @media (max-width: 600px) {
+            .encabezado {
+                gap: 12px;
+            }
+
+            .logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            .titulo {
+                font-size: clamp(38px, 9vw, 60px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+        <img src="DATA/FOTOS/logos/LOGO.png"
+             alt="Logo de Olivia Rodrigo"
+             class="logo">
+
+        <h1 class="titulo">MERCANCÍA</h1>
+    </header>
+
+    <!-- MARIPOSAS EN MOVIMIENTO -->
+    <div class="carrusel">
+        <div class="carrusel-imagen"></div>
+    </div>
+
+ <!-- PÁGINA 1: PRODUCTOS DEL 1 AL 4 -->
+    <main class="contenedor-productos">
+
+        <div class="producto">
+            <!-- VINIL SADLOVE -->
+            <a href=" https://store.oliviarodrigo.com/collections/girlsoinlove/products/you-seem-pretty-sad-for-a-girl-so-in-love-spark-in-the-dark-black-vinyl" target="_blank">
+                <img src="DATA/FOTOS/mercancia/vinilsadlove.png"
+                     alt="vinilsadlove">
+            </a>
+            <p class="nombre-producto">Vinilo Negro "You are a spark in the dark - You Seem Pretty Sad For A Girl So In Love</p>
+            <p class="precio-producto">$606.37 MXN</p>
+        </div>
+
+        <div class="producto">
+
+            <!-- BOLSA MARIPOSA -->
+            <a href="https://store.oliviarodrigo.com/collections/guts/products/butterfly-tote-in-clear" target="_blank">
+                <img src="DATA/FOTOS/mercancia/bolsa.png"
+                     alt="Bolsa de tote - Mariposa">
+            </a>
+            <p class="nombre-producto">Bolsa de Tote - Mariposa</p>
+            <p class="precio-producto">$918.74 MXN</p>
+        </div>
+
+        <div class="producto">
+
+            <!-- FUNDA CELULAR -->
+            <a href="https://store.oliviarodrigo.com/collections/merch/products/wildflower-cases-x-daisy-chain-fields-phone-case" target="_blank">
+                <img src="DATA/FOTOS/mercancia/phonecase.png"
+                     alt="phonecase">
+            </a>
+            <p class="nombre-producto">Case Celular Wildflower cases x Daisy Chain Fiels</p>
+            <p class="precio-producto">$679.86 MXN</p>
+        </div>
+
+        <div class="producto">
+
+
+            <!-- LEGO LUNA -->
+            <a href="https://store.oliviarodrigo.com/products/lego-editions-olivia-rodrigo-s-concert-moon" target="_blank">
+                <img src="DATA/FOTOS/mercancia/legoluna.png"
+                     alt="nombreproducto4">
+            </a>
+            <p class="nombre-producto">Lego Edición Especial Olivia Rodrigo Concierto En La Luna</p>
+            <p class="precio-producto">$918.55 MXN</p>
+        </div>
+
+    </main>
+
+    <!-- NÚMEROS DE LAS PÁGINAS -->
+    <nav class="paginacion">
+        <span class="pagina-actual">1</span>
+        <a href="MERCANCIA2.html">2</a>
+        <a href="MERCANCIA3.html">3</a>
+    </nav>
+
+    <!-- ENLACE A LA TIENDA OFICIAL -->
+    <div class="enlace-tienda">
+        <a href="https://store.oliviarodrigo.com/?srsltid=AU7gw4VlTW48D7eGnfUUEgg3mfojp1Jf-8ahEP8yMX10Zo_D4yGURJVu" target="_blank">
+            Visita la tienda oficial
+        </a>
+    </div>
+
+    <!-- CASITA PARA VOLVER AL MENÚ -->
+    <div class="regresar-inicio">
+        <a href="index.html" title="Volver al inicio">
+            <img src="DATA/FOTOS/logos/casa.png"
+                 alt="Volver al inicio">
+        </a>
+    </div>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        Hecho por Luisita :)
+    </footer>
+
+</body>
+</html>

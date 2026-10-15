@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>COLABORACIONES MUSICALES</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: "Just Like Heaven";
+            src: url("DATA/FUENTES/justlikeheaven.ttf") format("truetype");
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #DDC5EB;
+            cursor: url("DATA/FOTOS/logos/Cursor.png") 16 16, auto;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ENCABEZADO */
+        .encabezado {
+            width: 100%;
+            min-height: 145px;
+            background-color: #884299;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px;
+        }
+
+        .logo {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+        }
+
+        .titulo {
+            color: white;
+            font-family: "Just Like Heaven", cursive;
+            font-size: 75px;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        /* MARIPOSAS EN MOVIMIENTO */
+        .carrusel {
+            width: 100%;
+            height: 50px;
+            overflow: hidden;
+            border-bottom: 2px solid rgb(51, 51, 51);
+        }
+
+        .carrusel-imagen {
+            width: 100%;
+            height: 100%;
+            background-color: #d6cbd8;
+            background-image: url("DATA/FOTOS/logos/rota.png");
+            background-repeat: repeat-x;
+            background-size: 70px 50px;
+            animation: desplazamiento 2s linear infinite;
+        }
+
+        @keyframes desplazamiento {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: -70px 0;
+            }
+        }
+
+        /* TÍTULO DE LA SECCIÓN */
+        .subtitulo {
+            text-align: center;
+            margin: 30px 15px;
+            color: #884299;
+            font-family: "Montserrat", sans-serif;
+            font-size: 26px;
+        }
+
+        /* VIDEOS */
+        .contenedor-videos {
+            width: 100%;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 10px 25px 35px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .video {
+            min-width: 0;
+            text-align: center;
+            padding: 12px;
+            background-color: white;
+            border: 1px solid white;
+            box-shadow: 0 4px 10px rgba(80, 40, 90, 0.18);
+        }
+
+        .video iframe {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+        }
+
+        .video h3 {
+            margin-top: 15px;
+            margin-bottom: 8px;
+            color: #884299;
+            font-family: "Montserrat", sans-serif;
+            font-size: 17px;
+            line-height: 1.4;
+        }
+
+        .video p {
+            color: #333;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* NAVEGACIÓN */
+.paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    padding: 0 15px 30px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 19px;
+}
+
+.paginacion a {
+    color: #884299;
+    text-decoration: none;
+}
+
+.paginacion a:hover,
+.paginacion a.pagina-actual {
+    text-decoration: underline;
+    font-weight: 800;
+}
+
+        /* CASITA PARA VOLVER AL MENÚ */
+        .regresar-inicio {
+            display: flex;
+            justify-content: center;
+            padding: 0 0 25px;
+        }
+
+        .regresar-inicio img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            transition: transform 0.2s ease;
+        }
+
+        .regresar-inicio a:hover img {
+            transform: scale(1.15);
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            width: 100%;
+            min-height: 45px;
+            background-color: #884299;
+            color: white;
+            font-family: "Montserrat", sans-serif;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        /* TABLETAS */
+        @media (max-width: 900px) {
+            .contenedor-videos {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .titulo {
+                font-size: 60px;
+            }
+        }
+
+        /* CELULARES */
+        @media (max-width: 600px) {
+            .encabezado {
+                gap: 12px;
+            }
+
+            .logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            .titulo {
+                font-size: clamp(32px, 8vw, 48px);
+            }
+
+            .contenedor-videos {
+                grid-template-columns: 1fr;
+                padding: 10px 20px 30px;
+            }
+
+            .subtitulo {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+        <img src="DATA/FOTOS/logos/LOGO.png"
+             alt="Logo de Olivia Rodrigo"
+             class="logo">
+
+        <h1 class="titulo">COLABORACIONES</h1>
+    </header>
+
+    <!-- MARIPOSAS EN MOVIMIENTO -->
+    <div class="carrusel">
+        <div class="carrusel-imagen"></div>
+    </div>
+
+<h2 class="subtitulo">Colaboraciones musicales y presentaciones en vivo</h2>
+
+    <!-- VIDEOS -->
+    <main class="contenedor-videos">
+
+        <!-- VIDEO 1 -->
+        <div class="video">
+            <iframe
+                src="https://www.youtube.com/embed/MDTlUtrzeFI"
+                title="Just Like Heaven - Olivia Rodrigo y Robert Smith"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h3>Just Like Heaven</h3>
+            <p>Olivia Rodrigo y Robert Smith</p>
+        </div>
+
+        <!-- VIDEO 2 -->
+        <div class="video">
+            <iframe
+                src="https://www.youtube.com/embed/AWTLuT1Rq7U"
+                title="Friday I'm in Love - Olivia Rodrigo y Robert Smith"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h3>Friday I'm in Love</h3>
+            <p>Olivia Rodrigo y Robert Smith</p>
+        </div>
+
+        <!-- VIDEO 3 -->
+        <div class="video">
+            <iframe
+                src="https://www.youtube.com/embed/X0DvM9DaZl4"
+                title="Stick Season - Olivia Rodrigo y Noah Kahan"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h3>Stick Season (en vivo)</h3>
+            <p>Olivia Rodrigo y Noah Kahan</p>
+        </div>
+
+    </main>
+
+<nav class="paginacion">
+    <a href="COLABORACIONES.html" class="pagina-actual">1</a>
+    <a href="COLABORACIONES2.html">2</a>
+    <a href="COLABORACIONES3.html">3</a>
+</nav>
+
+    <!-- CASITA PARA VOLVER AL MENÚ -->
+    <div class="regresar-inicio">
+        <a href="index.html" title="Volver al menú">
+            <img src="DATA/FOTOS/logos/casa.png"
+                 alt="Volver al inicio">
+        </a>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        Hecho por Luisita :)
+    </footer>
+
+</body>
+</html>

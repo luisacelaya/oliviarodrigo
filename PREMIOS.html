@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Premios - Olivia Rodrigo</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: "Just Like Heaven";
+            src: url("DATA/FUENTES/justlikeheaven.ttf");
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: #DDC5EB;
+            font-family: "Montserrat", sans-serif;
+            cursor: url("DATA/FOTOS/logos/Cursor.png"), auto;
+        }
+
+        /* ENCABEZADO */
+        .encabezado {
+            min-height: 145px;
+            background-color: #884299;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+        }
+
+        .logo {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+        }
+
+        .titulo {
+            color: white;
+            font-family: "Just Like Heaven", cursive;
+            font-size: 65px;
+            text-align: center;
+            margin: 0;
+        }
+
+        /* MARIPOSAS */
+        .carrusel {
+            width: 100%;
+            height: 50px;
+            overflow: hidden;
+            border-bottom: 2px solid #333333;
+            background-image: url("DATA/FOTOS/logos/rota.png");
+            background-repeat: repeat-x;
+            background-size: 70px 50px;
+            animation: desplazamiento 2s linear infinite;
+        }
+
+        @keyframes desplazamiento {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: -70px 0;
+            }
+        }
+
+        /* SUBTÍTULO */
+        .subtitulo {
+            text-align: center;
+            font-size: 22px;
+            color: #333333;
+            margin: 35px 15px;
+        }
+
+        /* TARJETAS DE PREMIOS */
+        .contenedor-premios {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 0 25px 40px;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .tarjeta-premio {
+            background-color: #F9F2FC;
+            border: 2px solid white;
+            outline: 1px solid #A15B9E;
+            outline-offset: -7px;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 5px 12px rgba(83, 39, 93, 0.18);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .tarjeta-premio:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 9px 18px rgba(83, 39, 93, 0.28);
+        }
+
+        .tarjeta-premio img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    object-position: center 35%;
+    border: 2px solid #D9B8E3;
+    margin-bottom: 18px;
+}
+
+.tarjeta-premio:nth-child(3) img {
+    object-position: center 20%;
+}
+
+.tarjeta-premio:nth-child(4) img {
+    object-position: center 20%;
+}
+
+        .tarjeta-premio h2 {
+            color: #884299;
+            font-size: 17px;
+            line-height: 1.4;
+            margin: 0 0 12px;
+        }
+
+        .cantidad {
+            color: #333333;
+            font-size: 15px;
+            margin: 0 0 15px;
+            line-height: 1.5;
+        }
+
+        .cantidad strong {
+            display: block;
+            color: #884299;
+            font-size: 29px;
+        }
+
+        /* CASITA */
+        .regresar-inicio {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 30px;
+        }
+
+        .regresar-inicio img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            width: 100%;
+            background-color: #884299;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 13px;
+        }
+
+        /* TABLET */
+        @media (max-width: 1000px) {
+            .contenedor-premios {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                max-width: 700px;
+            }
+        }
+
+        /* CELULAR */
+        @media (max-width: 550px) {
+            .encabezado {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .titulo {
+                font-size: 48px;
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .contenedor-premios {
+                grid-template-columns: 1fr;
+                max-width: 380px;
+                gap: 22px;
+            }
+
+            .tarjeta-premio img {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+        <img
+            class="logo"
+            src="DATA/FOTOS/logos/LOGO.png"
+            alt="Logo de Olivia Rodrigo">
+
+        <h1 class="titulo">PREMIOS</h1>
+    </header>
+
+    <!-- MARIPOSAS -->
+    <div class="carrusel"></div>
+
+    <h2 class="subtitulo">
+        Premios y reconocimientos de Olivia Rodrigo
+    </h2>
+
+    <!-- TARJETAS DE PREMIOS -->
+    <main class="contenedor-premios">
+
+        <!-- GRAMMY -->
+        <article class="tarjeta-premio">
+            <img
+                src="DATA/FOTOS/premios/gramis.jpg"
+                alt="Olivia Rodrigo con sus premios Grammy">
+
+            <h2>Grammy Awards</h2>
+
+            <p class="cantidad">
+                Premios ganados
+                <strong>3</strong>
+            </p>
+        </article>
+
+        <!-- AMERICAN MUSIC AWARDS -->
+        <article class="tarjeta-premio">
+            <img
+                src="DATA/FOTOS/premios/americanmusic.jpg"
+                alt="Olivia Rodrigo con su American Music Award">
+
+            <h2>American Music Awards</h2>
+
+            <p class="cantidad">
+                Premios ganados
+                <strong>1</strong>
+            </p>
+        </article>
+
+        <!-- MTV VIDEO MUSIC AWARDS -->
+        <article class="tarjeta-premio">
+            <img
+                src="DATA/FOTOS/premios/mtv.jpg"
+                alt="Olivia Rodrigo con sus premios MTV">
+
+            <h2>MTV Video Music Awards</h2>
+
+            <p class="cantidad">
+                Premios ganados
+                <strong>5</strong>
+            </p>
+        </article>
+
+        <!-- IHEARTRADIO MUSIC AWARDS -->
+        <article class="tarjeta-premio">
+            <img
+                src="DATA/FOTOS/premios/iheart.jpg"
+                alt="Olivia Rodrigo con sus premios iHeartRadio">
+
+            <h2>iHeartRadio Music Awards</h2>
+
+            <p class="cantidad">
+                Premios ganados
+                <strong>5</strong>
+            </p>
+        </article>
+
+    </main>
+
+    <!-- REGRESAR AL MENÚ PRINCIPAL -->
+    <a href="index.html" class="regresar-inicio">
+        <img
+            src="DATA/FOTOS/logos/casa.png"
+            alt="Regresar al menú principal">
+    </a>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        Hecho por Luisita :)
+    </footer>
+
+</body>
+</html>
